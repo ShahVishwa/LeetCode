@@ -55,12 +55,12 @@ public class stringCompression {
         int j = 0;
         int k = 0;
         int length = chars.length;
-        char last = chars[0];
+        char curr = chars[0];
         for(int i = 0; i < length; i++){
-            if(chars[i] == last){
+            if(chars[i] == curr){
                 j++;
             } else {
-                chars[k++] = last;
+                chars[k++] = curr;
                 if(j != 1){
                     char[] temp = ("" + j).toCharArray();
                     j = 0;
@@ -69,11 +69,11 @@ public class stringCompression {
                     }
                 }
                 j = 0;
-                last = chars[i];
+                curr = chars[i];
                 j++;
             }
         } 
-        chars[k++] = last;
+        chars[k++] = curr;
         if(j != 1){   
             char[] temp = ("" + j).toCharArray();
             for(int a = 0; a < temp.length; a++){
